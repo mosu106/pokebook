@@ -1,0 +1,8 @@
+query getAllPokemons{
+  pokemons(first: 151) {
+    number
+    name
+    types
+    image
+  }
+}

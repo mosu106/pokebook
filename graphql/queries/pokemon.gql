@@ -1,0 +1,7 @@
+query getPokemon($id: String, $name: String){
+  pokemon(id: $id,name:$name) {
+    number
+    name
+    types
+  }
+}
