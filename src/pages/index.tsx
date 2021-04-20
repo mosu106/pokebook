@@ -18,9 +18,10 @@ export async function getServerSideProps() {
 }
 
 const Home: NextPage<GetAllPokemonsQuery> = ({ pokemons }) => {
+
   return (
     <div className={style.main}>
-      {pokemons && pokemons.map((pokemon, index) =>
+      {pokemons && pokemons.map((pokemon) =>
         pokemon && (
           <Card key={pokemon.id} id={pokemon.id} number={pokemon.number} name={pokemon.name} types={pokemon.types} image={pokemon.image} />)
       )}

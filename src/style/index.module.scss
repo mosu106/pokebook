@@ -4,6 +4,20 @@
     margin: 0 auto;
     display: flex;
     flex-wrap:wrap;
-    justify-content:space-between;
     align-items: center;
+    justify-content: center;
+}
+
+
+
+.main::after,
+.main::before {
+    content: "";
+    display: block;
+    width: 320px;  /* .boxに指定したwidthと同じ幅を指定する */
+    height: 0;
+}
+
+.main::before {
+    order: 1;
 }
