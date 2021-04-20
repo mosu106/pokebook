@@ -19,8 +19,8 @@ const Component: React.FC<Props> = props => (
             </div>
             <div className={style.detail}>
                 <span className={style.name}>{props.number}:{props.name}</span>
-                <div className={style.type}>
-                    {props.types && props.types.map((v, index) => (<span key={props.id + index}>{v}</span>))}
+                <div className={style.typeWrap}>
+                    {props.types && props.types.map((v, index) => (<div className={style.typeTag}><span className={style.type} key={props.id + index} data-type={v?.toLowerCase()}>{v}</span></div>))}
                 </div>
             </div>
         </div>
