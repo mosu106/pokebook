@@ -4,8 +4,7 @@ import { GetAllPokemonsDocument, GetAllPokemonsQuery } from "../types.d"
 import { Card } from "./../components/Card"
 import style from "../style/index.module.scss"
 
-export async function getServerSideProps() {
-
+export async function getStaticProps() {
   const { data } = await client.query<GetAllPokemonsQuery>({
     query: GetAllPokemonsDocument,
   });
