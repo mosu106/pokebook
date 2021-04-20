@@ -1,10 +1,14 @@
 .wrap{
     font-size: 1.4rem;
-    width: 33.3%;
-    min-width: 290px;
+    flex-basis:calc((100% - 50px) / 3);
+    max-width:calc((100% - 50px) / 3);
 }
 
 .card{
+    color:  white;
+    background: white;
+    border-top: solid 5px #5d627b;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.22);
     margin-top: 16px;
     display: flex;
     flex-flow: column;
@@ -12,15 +16,36 @@
     align-items: center;
 }
 
+.detail{
+    display: inline-flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #5d627b;
+}
+
+.type{
+    white-space: normal;
+    padding: 4px;
+}
+
+.name{
+    font-size: 1.5rem;
+    padding: 4px;
+}
+
 .image{
+    padding: 12px 0;
     width: 250px;
     height: 250px;
     display: flex;
     justify-content: center;
+    background-color: #fff;
     
     img{
-    max-width: 250px;
-    max-height: 250px;
+    max-width: 240px;
+    max-height: 240px;
     object-fit: contain;
     }
 }

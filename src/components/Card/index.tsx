@@ -14,11 +14,15 @@ type Props = ContainerProps
 const Component: React.FC<Props> = props => (
     <div className={style.wrap}>
         <div className={style.card}>
-            <h3>{props.number}:{props.name}</h3>
             <div className={style.image}>
                 {props.name && props.image && <img src={props.image} alt={props.name} title={props.name}></img>}
             </div>
-            {props.types && props.types.map((v, index) => (<span key={props.id + index}>{v}</span>))}
+            <div className={style.detail}>
+                <span className={style.name}>{props.number}:{props.name}</span>
+                <div className={style.type}>
+                    {props.types && props.types.map((v, index) => (<span key={props.id + index}>{v}</span>))}
+                </div>
+            </div>
         </div>
     </div>
 )
