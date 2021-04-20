@@ -118,7 +118,7 @@ export type GetPokemonQuery = (
   { __typename?: 'Query' }
   & { pokemon?: Maybe<(
     { __typename?: 'Pokemon' }
-    & Pick<Pokemon, 'number' | 'name' | 'types'>
+    & Pick<Pokemon, 'id' | 'number' | 'name' | 'types'>
   )> }
 );
 
@@ -129,11 +129,7 @@ export type GetAllPokemonsQuery = (
   { __typename?: 'Query' }
   & { pokemons?: Maybe<Array<Maybe<(
     { __typename?: 'Pokemon' }
-    & Pick<Pokemon, 'number' | 'name' | 'types' | 'image'>
-    & { evolutions?: Maybe<Array<Maybe<(
-      { __typename?: 'Pokemon' }
-      & Pick<Pokemon, 'number' | 'name' | 'types'>
-    )>>> }
+    & Pick<Pokemon, 'id' | 'number' | 'name' | 'types' | 'image'>
   )>>> }
 );
 
@@ -141,6 +137,7 @@ export type GetAllPokemonsQuery = (
 export const GetPokemonDocument = gql`
     query getPokemon($id: String, $name: String) {
   pokemon(id: $id, name: $name) {
+    id
     number
     name
     types
@@ -179,14 +176,10 @@ export type GetPokemonQueryResult = Apollo.QueryResult<GetPokemonQuery, GetPokem
 export const GetAllPokemonsDocument = gql`
     query getAllPokemons {
   pokemons(first: 151) {
+    id
     number
     name
     types
-    evolutions {
-      number
-      name
-      types
-    }
     image
   }
 }

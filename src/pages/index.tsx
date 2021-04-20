@@ -1,6 +1,8 @@
 import { NextPage } from 'next'
 import client from "../../apollo-client";
 import { GetAllPokemonsDocument, GetAllPokemonsQuery } from "../types.d"
+import { Card } from "./../components/Card"
+import style from "../style/index.module.scss"
 
 export async function getServerSideProps() {
 
@@ -17,14 +19,11 @@ export async function getServerSideProps() {
 
 const Home: NextPage<GetAllPokemonsQuery> = ({ pokemons }) => {
   return (
-    <div >
-      {pokemons && pokemons.map((pokemon) => (
-        <div key={pokemon?.number} >
-          <h3>{pokemon?.number}:{pokemon?.name}</h3>
-          {pokemon?.name && pokemon?.image && <img src={pokemon.image} alt={pokemon.name} title={pokemon.name}></img>}
-          {pokemon?.types && pokemon.types.map((v) => (<span>{v}</span>))}
-        </div>
-      ))}
+    <div className={style.main}>
+      {pokemons && pokemons.map((pokemon, index) =>
+        pokemon && (
+          <Card key={pokemon.id} id={pokemon.id} number={pokemon.number} name={pokemon.name} types={pokemon.types} image={pokemon.image} />)
+      )}
     </div>
   )
 }

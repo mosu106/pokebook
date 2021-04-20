@@ -1,5 +1,6 @@
 query getAllPokemons{
   pokemons(first: 151) {
+    id
     number
     name
     types
