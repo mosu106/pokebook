@@ -15,7 +15,9 @@ const Component: React.FC<Props> = props => (
     <div className={style.wrap}>
         <div className={style.card}>
             <h3>{props.number}:{props.name}</h3>
-            {props.name && props.image && <img className={style.image} src={props.image} alt={props.name} title={props.name}></img>}
+            <div className={style.image}>
+                {props.name && props.image && <img src={props.image} alt={props.name} title={props.name}></img>}
+            </div>
             {props.types && props.types.map((v, index) => (<span key={props.id + index}>{v}</span>))}
         </div>
     </div>
