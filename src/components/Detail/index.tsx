@@ -1,24 +1,22 @@
 import { FC } from 'react'
-import { useGetPokemonQuery, GetPokemonQuery } from "../../types.d"
 import style from './style.module.scss'
 
 type ContainerProps = {
+    id: string
     name: string
 }
 
 type Props = {
-    data: GetPokemonQuery | undefined
+    id: string
+    name: string
 }
 
 const Component: React.FC<Props> = props => (
     <div className={style.wrap}>
-        {props.data?.pokemon && props.data.pokemon.name}
+        {props.id}:{props.name}
     </div>
 )
 
 export const Detail: FC<ContainerProps> = props => {
-    const { data, error, loading } = useGetPokemonQuery({
-        variables: { name: props.name }
-    })
-    return <Component data={data} />
+    return <Component id={props.id} name={props.name} />
 }
