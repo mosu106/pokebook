@@ -58,6 +58,8 @@ const DetailPage: NextPage<GetPokemonQuery> = ({ pokemon }) => {
         return <DefaultErrorPage statusCode={404} />
     }
 
+    console.log('test')
+
     if (!pokemon?.number
         || !pokemon?.name
         || !pokemon?.types
