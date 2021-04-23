@@ -58,8 +58,6 @@ const DetailPage: NextPage<GetPokemonQuery> = ({ pokemon }) => {
         return <DefaultErrorPage statusCode={404} />
     }
 
-    console.log(pokemon?.height?.maximum)
-
     if (!pokemon?.number
         || !pokemon?.name
         || !pokemon?.types
