@@ -1,6 +1,7 @@
 import { FC } from 'react'
 import style from './style.module.scss'
 import Link from 'next/link'
+import { TypeTag } from '../TypeTag'
 
 type ContainerProps = {
     id: string
@@ -22,7 +23,7 @@ const Component: React.FC<Props> = props => (
                 <div className={style.detail}>
                     <span className={style.name}>{props.number}:{props.name}</span>
                     <div className={style.typeWrap}>
-                        {props.types && props.types.map((v, index) => (<div className={style.typeTag} key={props.id + index} ><span className={style.type} data-type={v?.toLowerCase()}>{v}</span></div>))}
+                        {props.types && props.types.filter((v): v is NonNullable<typeof v> => v != null).map((v, index) => (<div className={style.typeTag} key={props.id + index} ><TypeTag type={v} /></div>))}
                     </div>
                 </div>
             </div>

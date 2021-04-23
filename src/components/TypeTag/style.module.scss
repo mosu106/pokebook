@@ -1,0 +1,62 @@
+.type{
+    font-size: 1rem;
+    background-color: cyan;
+    border-radius: 1em;
+    padding: 2px 12px 2px 12px;
+
+    &[data-type="grass"]{
+      background-color: rgb(58, 207, 103);
+    }
+    &[data-type="poison"]{
+      background-color: rgb(139, 18, 175);
+    }
+    &[data-type="fire"]{
+      background-color: rgb(211, 49, 49);
+    }
+    &[data-type="flying"]{
+      background-color: rgb(60, 83, 214);
+    }
+    &[data-type="water"]{
+      background-color: rgb(35, 187, 187);
+    }
+    &[data-type="bug"]{
+      background-color: rgb(93, 139, 32);
+    }
+    &[data-type="normal"]{
+      background-color: rgb(75, 75, 75);
+    }
+    &[data-type="electric"]{
+      background-color: rgb(224, 197, 43);
+    }
+    &[data-type="ground"]{
+      background-color: rgba(117, 54, 34, 0.651);
+    }
+    &[data-type="fairy"]{
+      background-color: rgba(255, 145, 172, 0.651);
+    }
+    &[data-type="fighting"]{
+      background-color: rgba(204, 99, 38, 0.651);
+    }
+    &[data-type="psychic"]{
+      background-color: rgba(248, 110, 191, 0.651);
+    }
+    &[data-type="rock"]{
+      background-color: rgba(139, 126, 88, 0.651);
+    }
+    &[data-type="steel"]{
+      background-color: rgba(75, 122, 124, 0.651);
+    }
+    &[data-type="ice"]{
+      background-color: rgba(164, 255, 243, 0.801);
+    }
+    &[data-type="ghost"]{
+      background-color: rgba(151, 100, 172, 0.801);
+    }
+    &[data-type="dragon"]{
+      background-color: rgba(60, 131, 179, 0.801);
+    }
+}
+
+.typeTag{
+    margin: 0px 8px 8px 8px;
+}
