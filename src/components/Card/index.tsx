@@ -14,7 +14,7 @@ type ContainerProps = {
 type Props = ContainerProps
 
 const Component: React.FC<Props> = props => (
-    <Link href="/[name]" as={`/${props.name}`}>
+    <Link href="/[name]" as={`/${props.name?.toLowerCase()}`}>
         <a className={style.wrap}>
             <div className={style.card}>
                 <div className={style.image}>

@@ -22,7 +22,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     }
 
     const paths = data.pokemons.flatMap(pokemon => (pokemon?.name ? {
-        params: { name: pokemon?.name },
+        params: { name: pokemon?.name.toLowerCase() },
     } : []))
 
     return { paths, fallback: false }
@@ -58,14 +58,41 @@ const DetailPage: NextPage<GetPokemonQuery> = ({ pokemon }) => {
         return <DefaultErrorPage statusCode={404} />
     }
 
-    if (!pokemon?.name || !pokemon?.types) {
+    console.log(pokemon?.height?.maximum)
+
+    if (!pokemon?.number
+        || !pokemon?.name
+        || !pokemon?.types
+        || !pokemon?.resistant
+        || !pokemon?.classification
+        || !pokemon?.weaknesses
+        || !pokemon?.image
+        || !pokemon.height?.maximum
+        || !pokemon.height?.minimum
+        || !pokemon.weight?.maximum
+        || !pokemon.weight?.minimum
+
+    ) {
         return <DefaultErrorPage statusCode={404} />
     }
 
     return (
         <ApolloProvider client={client}>
-            <div className={style.main}>
-                {pokemon && <Detail id={pokemon.id} name={pokemon.name} />}
+            <div className={style.namePage}>
+                {pokemon && <Detail
+                    id={pokemon.id}
+                    number={pokemon.number}
+                    name={pokemon.name}
+                    classification={pokemon.classification}
+                    resistant={pokemon.resistant}
+                    types={pokemon.types}
+                    weekness={pokemon.weaknesses}
+                    image={pokemon.image}
+                    maxHeight={pokemon.height.maximum}
+                    minHeight={pokemon.height.minimum}
+                    maxWeight={pokemon.weight.maximum}
+                    minWeight={pokemon.weight.minimum}
+                />}
             </div>
         </ApolloProvider>
     )

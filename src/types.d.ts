@@ -118,7 +118,14 @@ export type GetPokemonQuery = (
   { __typename?: 'Query' }
   & { pokemon?: Maybe<(
     { __typename?: 'Pokemon' }
-    & Pick<Pokemon, 'id' | 'number' | 'name' | 'types'>
+    & Pick<Pokemon, 'id' | 'number' | 'classification' | 'name' | 'types' | 'resistant' | 'weaknesses' | 'image'>
+    & { weight?: Maybe<(
+      { __typename?: 'PokemonDimension' }
+      & Pick<PokemonDimension, 'minimum' | 'maximum'>
+    )>, height?: Maybe<(
+      { __typename?: 'PokemonDimension' }
+      & Pick<PokemonDimension, 'minimum' | 'maximum'>
+    )> }
   )> }
 );
 
@@ -139,8 +146,20 @@ export const GetPokemonDocument = gql`
   pokemon(id: $id, name: $name) {
     id
     number
+    classification
     name
     types
+    resistant
+    weaknesses
+    image
+    weight {
+      minimum
+      maximum
+    }
+    height {
+      minimum
+      maximum
+    }
   }
 }
     `;

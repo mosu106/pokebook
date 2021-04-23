@@ -1,8 +1,14 @@
 .type{
     font-size: 1rem;
+    color:  white;
     background-color: cyan;
     border-radius: 1em;
     padding: 2px 12px 2px 12px;
+
+    &[data-size="large"]{
+      font-size: 1.8rem;
+      padding: 4px 16px 4px 16px;
+    }
 
     &[data-type="grass"]{
       background-color: rgb(58, 207, 103);

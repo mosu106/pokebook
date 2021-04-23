@@ -6,9 +6,16 @@
     flex-wrap:wrap;
     align-items: center;
     justify-content: center;
+    color: #333
 }
 
-
+.namePage {
+    width: 70%;
+    max-width: 1080px;
+    margin: 0 auto;
+    margin-top:40px;
+    color: #333
+}
 
 .main::after,
 .main::before {

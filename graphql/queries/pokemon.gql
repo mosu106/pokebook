@@ -2,7 +2,19 @@ query getPokemon($id: String, $name: String){
   pokemon(id: $id,name:$name) {
     id
     number
+    classification
     name
     types
+    resistant
+    weaknesses
+    image
+    weight {
+      minimum
+      maximum
+    }
+    height {
+      minimum
+      maximum
+    }
   }
 }
