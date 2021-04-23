@@ -3,7 +3,7 @@ name: deploy
 on:
   push:
     branches:
-      - main
+      - gh-pages
 
 jobs:
   deploy:
@@ -26,5 +26,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: main
+          BRANCH: gh-pages
           FOLDER: out
