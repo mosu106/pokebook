@@ -25,8 +25,6 @@ jobs:
     - name: install
       run: npm install --frozen-lockfile
     - name: build
-      env:
-          GITHUB_PAGES: true
       run: npm run build
     - name: export
       run: npm run export

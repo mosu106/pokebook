@@ -4,9 +4,9 @@
 const path = require('path')
 
 module.exports = {
-  assetPrefix: process.env.GITHUB_PAGES ? '/pokebook' : '.',
+  assetPrefix: process.env.NODE_ENV === "production" ? '/pokebook' : '.',
   publicRuntimeConfig: {
-    basePath: process.env.GITHUB_PAGES ? '/pokebook' : '',
+    basePath: process.env.NODE_ENV === "production" ? '/pokebook' : '',
   },
   webpack(config) {
     config.resolve.alias = {
