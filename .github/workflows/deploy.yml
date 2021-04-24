@@ -22,7 +22,7 @@ jobs:
           GITHUB_PAGES: true
       - name: export static html
         run: |
-          yarn export
+          npm export
           touch out/.nojekyll
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@4.1.0
