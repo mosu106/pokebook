@@ -18,7 +18,7 @@ type Props = ContainerProps
 console.log(publicRuntimeConfig.basePath)
 
 const Component: React.FC<Props> = props => (
-    <Link href={`${publicRuntimeConfig.basePath}/${props.name?.toLowerCase()}`}>
+    <Link href={`${publicRuntimeConfig.basePath}/[name]`} as={`${publicRuntimeConfig.basePath}/${props.name?.toLowerCase()}`}>
         <a className={style.wrap}>
             <div className={style.card}>
                 <div className={style.image}>
