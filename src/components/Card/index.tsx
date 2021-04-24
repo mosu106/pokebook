@@ -2,6 +2,7 @@ import { FC } from 'react'
 import style from './style.module.scss'
 import Link from 'next/link'
 import { TypeTag } from '../TypeTag'
+import Path from '../../lib/basePath';
 
 type ContainerProps = {
     id: string
@@ -14,7 +15,7 @@ type ContainerProps = {
 type Props = ContainerProps
 
 const Component: React.FC<Props> = props => (
-    <Link href="/[name]" as={`/${props.name?.toLowerCase()}`}>
+    <Link href="/[name]" as={Path(`/${props.name?.toLowerCase()}`)}>
         <a className={style.wrap}>
             <div className={style.card}>
                 <div className={style.image}>
